@@ -20,3 +20,6 @@ app.post('/webhook', async (req, res) => {
 });
 
 app.listen(3000, () => console.log('✅ Tchilla vivo na porta 3000'));
+app.get("/", (req, res) => {
+  res.send("Tchilla está online 👋");
+});
