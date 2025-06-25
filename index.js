@@ -3,6 +3,19 @@ const axios = require('axios');
 require('dotenv').config();
 const app = express();
 app.use(express.json());
+const express = require("express");
+const app = express();
+
+app.use(express.json()); // 
+
+app.post("/webhook", (req, res) => {
+  console.log("Mensagem recebida no webhook:", req.body);
+  res.sendStatus(200);
+});
+
+app.get("/", (req, res) => {
+  res.send("Tchilla está online 👋");
+});
 
 app.post('/webhook', async (req, res) => {
   const msg = req.body.message?.body || '';
